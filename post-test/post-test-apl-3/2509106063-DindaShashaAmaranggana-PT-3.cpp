@@ -168,8 +168,8 @@ int createPesan(Ebook katalog[], int jumlahBuku, EbookUser ebookUser[], int juml
     cout << "" << endl;
     int pilihan = scrollBuku(katalog, jumlahBuku, "Pesan E-Book");
 
-    for(int j = 0; j < jumlahEbookUser; j++){
-        if(ebookUser[j].username == jawabNama && ebookUser[j].buku.id == katalog[pilihan].id){
+    for(int i = 0; i < jumlahEbookUser; i++){
+        if(ebookUser[i].username == jawabNama && ebookUser[i].buku.id == katalog[pilihan].id){
             sudahBeli = true;
             break;}}
 
