@@ -212,13 +212,13 @@ void readEbookUser(EbookUser *ebookUser, int jumlahEbookUser, string jawabNama) 
         tampilPesan(28, "Anda belum memiliki E-book.");}
     cout << "" << endl;}
 
-void updateSaldo(Akun *akun, int indeksLogin) {
+void updateSaldo(Akun *akun, int *indeksLogin) {
     int nominal;
     cout << "\n     Masukkan nominal topup: "; cin >> nominal;
     if (nominal <= 0) {
         tampilPeringatan(44, "Nominal tidak boleh minus atau bernilai 0!");}
     else {
-        (akun + indeksLogin)->saldo += nominal;
+        (akun + *indeksLogin)->saldo += nominal;
         tampilPesan(16, "Topup berhasil!");}}
 
 
@@ -379,7 +379,7 @@ int menuUser(Akun *akun, int indeksLogin, Ebook *katalog, int jumlahBuku, EbookU
                 system("cls");
                 judul_subjudul("Topup Saldo Anda");
                 cout << "" << endl;
-                updateSaldo(akun, indeksLogin);
+                updateSaldo(akun, &indeksLogin);
                 system("pause");}
 
             /* e. MENU USER LOGOUT
